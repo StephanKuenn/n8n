@@ -76,6 +76,7 @@
 							)
 						}}
 					</n8n-text>
+					<h2>Hello Stephan, lets get this party started.</h2>
 				</div>
 				<div v-if="!readOnlyEnv" :class="['text-center', 'mt-2xl', $style.actionsContainer]">
 					<n8n-card
