@@ -31,5 +31,14 @@ services:
     # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
+  mock-server-prism:
+    image: stoplight/prism:4
+    command: 'mock -h 0.0.0.0 /tmp/openapi_v2.yml'
+    volumes:
+      - ./mock-server-qonto/openapi_v2.yml:/tmp/openapi_v2.yml:ro
+    ports:
+      # Serve the mocked API locally as available on port 8080
+      - '4010:4010'
+
 volumes:
   postgres-data:
